@@ -1,0 +1,31 @@
+<div class="col-md-7 col-lg-4 row justify-content-center" style="float: left; margin-top: 10%; margin-left: 10%;">
+    <div class="login-wrap p-4 p-md-5">
+        <div class="d-flex align-items-center justify-content-center">
+        </div>
+        <div style="text-align:center;">
+            <h2 >Inicio de Sesión</h2>
+            <br>
+            <div style="margin-top: 15px">
+                <input class="form-control" placeholder="Ingrese Usuario" [formControl]="user" required />
+                <mat-error style="color:red; font-size: 12px;" *ngIf="user.touched && user.invalid">{{getErrorMessageUsuario()}}</mat-error>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <input class="form-control" [type]="hide ? 'password' : 'text'" placeholder="Ingrese Contraseña"
+                    [formControl]="password" required />
+                <mat-error style="color:red; font-size: 12px;" *ngIf="password.touched && password.invalid">{{getErrorMessagePassword()}}</mat-error>
+            </div>
+            <br> <br>
+            <div class="d-grid gap-2">
+                <button style="float: right;" class="btn btn-primary"
+                    (click)="iniciar();">Ingresar
+                </button>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-7 col-lg-5 " style="float: right; margin-top: 6%; margin-right: 10%;">
+    <img src="../../assets/fundacion.jpg" alt="" width="100%">
+</div>
